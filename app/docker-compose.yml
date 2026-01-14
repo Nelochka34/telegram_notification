@@ -1,7 +1,10 @@
-#
-//  docker-compose.yml
-//  
-//
-//  Created by Helen Maksimenko on 14.01.2026.
-//
-
+#version: '3'
+services:
+  test_listener_2:
+    image: python_flask_soc
+    volumes:
+      - ./app.py:/app.py
+    ports:
+      - 5002:5002
+    container_name: tg_notification
+    command: "python app.py"

@@ -1,0 +1,13 @@
+stages:
+    - run_app
+
+run_app:
+    stage: run_app
+    tags:
+        - tg_notification
+    script:
+        - bash ./app/add_vars.sh ${main_chat_id} ${test_chat_id} ${bot_tkn} ${logsource_chat_id} ${bot_token} ${netsec_chat_id}
+        - cd app
+        - docker-compose down
+        - docker-compose build --no-cache
+        - docker-compose up -d
