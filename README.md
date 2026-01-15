@@ -1,2 +1,2 @@
-# Telegran notification for OpenSearch
+# Telegram notification for OpenSearch
 
