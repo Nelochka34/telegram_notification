@@ -1,2 +1,32 @@
-# Telegram notification for OpenSearch
+# Telegram Notification for OpenSearch 
+    Проект предназначен для отправки уведомлений в Telegram на основе событий, получаемых из OpenSearch. 
+    Проект разворачивается и запускается с использованием Docker и docker-compose, а сборка и запуск автоматизированы через GitLab CI/CD.
 
+    Как работает проект: 
+    1. OpenSearch отправляет события по HTTP на порт 5002, сервис принимает.
+    2. События парсятся и формируются в текст уведомления.
+    3. Уведомления отправляются в Telegram-чат через Telegram Bot API.
+
+ ## Структура проекта:    
+telegram-notifications/
+│
+├── .gitlab-ci.yml          # GitLab CI/CD pipeline
+└── app/
+    ├── Dockerfile          # Docker-образ приложения
+    ├── docker-compose.yml  # Запуск сервиса
+    ├── app.py              # Основная логика приложения
+    ├── requirements.txt    # Python-зависимости
+    ├── add_vars.sh         # Скрипт для установки переменных окружения
+
+Что делает CitLab CI/CD: 
+1. Клонирует репозиторий;
+2. Запускает скрипт для переменных окружения; 
+3. Переходит в каталог app; 
+4. Пересобирает docker-образ;
+5. Запускает контейнер через docker-compose. 
+
+Docker file: 
+- использутся образ pyton:3.11-slim
+- устанавливаются зависимости из requirements.txt
+- копируется код приложения
+- запускается приложение 
