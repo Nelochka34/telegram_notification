@@ -7,18 +7,20 @@
     2. События парсятся и формируются в текст уведомления.
     3. Уведомления отправляются в Telegram-чат через Telegram Bot API.
 
- ## Структура проекта:    
+ ## Структура проекта:   
+ 
 ```
-telegram-notifications/
+    telegram-notifications/
 
-.gitlab-ci.yml          # GitLab CI/CD pipeline
-app/
-    Dockerfile          # Docker-образ приложения
-    docker-compose.yml  # Запуск сервиса
-    app.py              # Основная логика приложения
-    requirements.txt    # Python-зависимости
-    add_vars.sh         # Скрипт для установки переменных окружения
+    .gitlab-ci.yml          # GitLab CI/CD pipeline
+    app/
+        Dockerfile          # Docker-образ приложения
+        docker-compose.yml  # Запуск сервиса
+        app.py              # Основная логика приложения
+        requirements.txt    # Python-зависимости
+        add_vars.sh         # Скрипт для установки переменных окружения
 ```
+
 Что делает CitLab CI/CD: 
 1. Клонирует репозиторий;
 2. Запускает скрипт для переменных окружения; 
