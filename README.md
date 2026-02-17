@@ -8,6 +8,7 @@
     3. Уведомления отправляются в Telegram-чат через Telegram Bot API.
 
  ## Структура проекта:    
+```
 telegram-notifications/
 
 .gitlab-ci.yml          # GitLab CI/CD pipeline
@@ -17,7 +18,7 @@ app/
     app.py              # Основная логика приложения
     requirements.txt    # Python-зависимости
     add_vars.sh         # Скрипт для установки переменных окружения
-
+```
 Что делает CitLab CI/CD: 
 1. Клонирует репозиторий;
 2. Запускает скрипт для переменных окружения; 
